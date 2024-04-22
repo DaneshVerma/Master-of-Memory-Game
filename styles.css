@@ -5,8 +5,8 @@ body {
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
+  font-size: 2rem;
+  margin:  1%;
   color: #011F3F;
 }
 
@@ -19,6 +19,15 @@ h1 p{
   width: 50%;
   margin: auto;
 
+}
+
+.start-btn {
+  color: #fef2bf;
+  background: #011f3f;
+  padding: 5px 10px;
+  font-size: 2rem;
+  border-radius: 5%;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .btn {
@@ -65,7 +74,6 @@ h1 p{
 .links{
   display: flex;
  justify-content: center;
- margin: 2vw 5vw;
  gap: 5vw;
 }
 

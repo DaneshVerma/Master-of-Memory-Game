@@ -16,13 +16,17 @@ function nextSequence() {
 }
 
 // game starting here 
-$("body").keypress(function (e) {
-    if (!gameStarted) {
-        $("#level-title").text("Level " + level)
-        nextSequence()
-        gameStarted = true
-    }
-});
+startGame();
+function startGame() {  
+    $(".start-btn").click(function (e) {
+        if (!gameStarted) {
+            $("#level-title").text("Level " + level)
+            nextSequence()
+            gameStarted = true
+        }
+    });
+}
+
 
 // catching the button which is clicked and playing its  corresponding sound onwards.
 $(".btn").click(function (e) {
@@ -68,12 +72,12 @@ function checkAnswer(currentLevel) {
         // if wrong 
         playSound("wrong")
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over, Press anykey to Restart")
+        $("#level-title").text("!  Game Over !")
         setTimeout(() => {
             $("body").removeClass("game-over")
-        }, 200);
+            startOver()
+        }, 1000);
         // resetting the incremented paramerts to restart the game
-        startOver()
     }
 }
 
@@ -84,4 +88,6 @@ function startOver() {
     level = 0;
     gamePattern = [];
     userClickPattern = [];
+    $("#level-title").html('<button class="start-btn">Start</button>')
+    startGame();
 }
